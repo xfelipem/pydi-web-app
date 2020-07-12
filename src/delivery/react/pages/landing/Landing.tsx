@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core';
+import { Box, Container, Grid } from '@material-ui/core';
 import * as React from 'react';
 import { FC } from 'react';
 
@@ -29,19 +29,23 @@ export const Landing: FC<LandingProps> = ({
 }) => {
   if (!lastArticle) return null;
   return (
-    <>
+    <Container>
       <Header title={title} tabButtons={tabButtonItems} />
-      <Grid container>
-        <Grid item xs={12}>
-          <title>Last Article</title>
-          <ArticlePreview fullWidth article={lastArticle} />
+      <Box>
+        <Grid container>
+          <Grid item xs={12}>
+            <title>Last Article</title>
+            <ArticlePreview fullWidth article={lastArticle} />
+          </Grid>
+          <Grid item xs={12}>
+            <title>You may enjoy</title>
+            <Grid container xs={12} spacing={2}>
+              <ArticlePreviewList articles={articles} />
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid item xs={12}>
-          <title>You may enjoy</title>
-          <ArticlePreviewList articles={articles} />
-        </Grid>
-      </Grid>
+      </Box>
       <Footer title={title} description={description} />
-    </>
+    </Container>
   );
 };
