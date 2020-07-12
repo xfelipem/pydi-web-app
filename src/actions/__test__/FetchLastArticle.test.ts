@@ -1,8 +1,8 @@
 import { ArticleType } from '../../contracts/domain/ArticleType';
-import { ArticleService } from '../../domain/ArticleService';
-import { GetLastArticle } from '../GetLastArticle';
+import { ArticleService } from '../../delivery/react/domain/ArticleService';
+import { FetchLastArticle } from '../FetchLastArticle';
 
-describe('Given a GetLastArticle use case', () => {
+describe('Given a FetchLastArticle use case', () => {
   test(`
     when is invoked with no arguments, then should retrieve the last article
     created
@@ -22,15 +22,14 @@ describe('Given a GetLastArticle use case', () => {
 
     const articleService = new ArticleService();
 
-    const action = new GetLastArticle(articleService);
+    const action = new FetchLastArticle(articleService);
 
     let externalState;
 
-    const retrievedArticle = await action.execute((article: ArticleType) => {
+    await action.execute((article: ArticleType) => {
       externalState = article;
     });
 
-    expect(retrievedArticle).toBe(lastArticle);
     expect(externalState).toBe(lastArticle);
   });
 });

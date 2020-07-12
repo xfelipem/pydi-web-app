@@ -1,3 +1,3 @@
-export interface QueryUseCase<T> {
-  execute: (onFetch: (requested: T) => void) => T | Promise<T>;
+export interface UseCase<T> {
+  execute: (onFetch: (requested: T) => void) => Promise<void>;
 }

@@ -1,4 +1,4 @@
-import { FetchService } from '../../infrastructure/FetchService';
+import { FetchService } from '../../../../infrastructure/FetchService';
 import { ArticleService } from '../ArticleService';
 
 describe('Given a ArticleFetchService', () => {

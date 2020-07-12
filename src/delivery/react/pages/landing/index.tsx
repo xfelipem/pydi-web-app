@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { FC, useEffect, useMemo, useState } from 'react';
 
-import { GetLastArticle } from '../../../../actions/GetLastArticle';
+import { FetchLastArticle } from '../../../../actions/FetchLastArticle';
 import { ArticleType } from '../../../../contracts/domain/ArticleType';
 import { Landing } from './Landing';
 
@@ -66,7 +66,7 @@ function useLandingPresenter() {
   const isLoading = useMemo(() => !lastArticle && articles.length === 0, [lastArticle, articles]);
 
   useEffect(() => {
-    const getLastArticle = new GetLastArticle();
+    const getLastArticle = new FetchLastArticle();
     getLastArticle.execute(setLastArticle as (article: ArticleType) => void);
   }, []);
 
