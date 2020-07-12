@@ -1,22 +1,14 @@
 import { Grid } from '@material-ui/core';
 import * as React from 'react';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 
+import { GetLastArticle } from '../../../../actions/GetLastArticle';
 import { ArticlePreview } from '../../components/Article/Preview/Item';
 import { ArticlePreviewList } from '../../components/Article/Preview/List';
 import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
 
 const tabButtonItems = [{ label: 'Last Activity' }, { label: 'About Me' }];
-
-const mainArticle = {
-  id: 'theId01',
-  title: 'Super Article',
-  abstract: 'Super Abstract',
-  content: 'Super content',
-  date: 'Jan 13, 2004',
-  sources: ['https://source.unsplash.com/random'],
-};
 
 const articles = [
   {
@@ -46,6 +38,13 @@ const articles = [
 ];
 
 export const LandingPage: FC = () => {
+  const [mainArticle, setMainArticle] = useState();
+
+  useEffect(() => {
+    const getLastArticle = new GetLastArticle();
+    getLastArticle.execute(setMainArticle as (article: any) => void);
+  }, []);
+
   return (
     <>
       <Header title='FeliDev' tabButtons={tabButtonItems} />
