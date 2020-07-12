@@ -66,8 +66,8 @@ function useLandingPresenter() {
   const isLoading = useMemo(() => !lastArticle && articles.length === 0, [lastArticle, articles]);
 
   useEffect(() => {
-    const getLastArticle = new FetchLastArticle();
-    getLastArticle.execute(setLastArticle as (article: ArticleType) => void);
+    const fetchLastArticle = new FetchLastArticle();
+    fetchLastArticle.execute(setLastArticle as (article: ArticleType) => void);
   }, []);
 
   return { articles, description, isLoading, lastArticle, tabButtonItems, title };
