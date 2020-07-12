@@ -1,5 +1,5 @@
-import { ArticleType } from '../../../contracts/domain/ArticleType';
-import { FetchService } from '../../../infrastructure/FetchService';
+import { ArticleType } from '../contracts/domain/ArticleType';
+import { FetchService } from '../infrastructure/FetchService';
 
 export class ArticleService {
   constructor(private fetchService: FetchService = new FetchService()) {}

@@ -1,6 +1,6 @@
 import { UseCase } from '../contracts/application/UseCase';
 import { ArticleType } from '../contracts/domain/ArticleType';
-import { ArticleService } from '../delivery/react/domain/ArticleService';
+import { ArticleService } from '../domain/ArticleService';
 
 export class FetchLastArticle implements UseCase<ArticleType> {
   constructor(private fetchService: ArticleService = new ArticleService()) {}
