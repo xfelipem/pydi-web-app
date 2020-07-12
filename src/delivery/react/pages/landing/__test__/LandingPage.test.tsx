@@ -16,8 +16,8 @@ describe('Given a LandingPage', () => {
     expect(screen.getByText(/Last Activity/i)).toBeTruthy();
   });
 
-  test('when rendered, then should have a about me tab button', () => {
-    expect(screen.getByText(/About Me/i)).toBeTruthy();
+  test('when rendered, then should have a about the app tab button', () => {
+    expect(screen.getByText(/About The App/i)).toBeTruthy();
   });
 
   test('when rendered, then should display the last article preview', () => {

@@ -6,16 +6,14 @@ import { FullWidthPreview } from './FullWidthPreview';
 import { HalfWidthPreview } from './HalfWidthPreview';
 
 export interface ArticlePreview {
-  article?: ArticleType;
+  article: ArticleType;
 }
 
 interface ArticlePreviewProps extends ArticlePreview {
   fullWidth: boolean;
 }
 
-export const ArticlePreview: FC<ArticlePreviewProps> = ({ article, fullWidth, ...rest }) => {
-  if (!article) return null;
-  const props = { article, ...rest };
-  if (!fullWidth) return <HalfWidthPreview {...props} />;
-  return <FullWidthPreview {...props} />;
+export const ArticlePreview: FC<ArticlePreviewProps> = ({ fullWidth, article }) => {
+  if (!fullWidth) return <HalfWidthPreview article={article} />;
+  return <FullWidthPreview article={article} />;
 };

@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-type ButtonItem = { label: string };
+export type ButtonItem = { label: string };
 
 type HeaderProps = { title: string; tabButtons: ButtonItem[] };
 
