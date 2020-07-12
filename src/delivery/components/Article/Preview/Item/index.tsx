@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { FC } from 'react';
 
-import { ArticleType } from '../../../../../core/ArticleType';
+import { ArticleType } from '../../../../../domain/ArticleType';
 import { FullWidthPreview } from './FullWidthPreview';
 import { HalfWidthPreview } from './HalfWidthPreview';
 
