@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { Router } from '../../../contracts/infrastructure/Router';
+import { Router } from '../../../infrastructure/Router';
 import { LandingPage } from '../pages/landing';
 
 export class ReactRouter implements Router {

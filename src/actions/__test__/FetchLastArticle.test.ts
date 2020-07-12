@@ -1,5 +1,5 @@
-import { ArticleType } from '../../contracts/domain/ArticleType';
-import { ArticleService } from '../../domain/ArticleService';
+import { ArticleType } from '../../domain/model/ArticleType';
+import { ArticleService } from '../../domain/model/ArticleService';
 import { FetchLastArticle } from '../FetchLastArticle';
 
 describe('Given a FetchLastArticle use case', () => {

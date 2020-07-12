@@ -1,8 +1,7 @@
-import { UseCase } from '../contracts/application/UseCase';
-import { ArticleType } from '../contracts/domain/ArticleType';
-import { ArticleService } from '../domain/ArticleService';
+import { ArticleService } from '../domain/model/ArticleService';
+import { ArticleType } from '../domain/model/ArticleType';
 
-export class FetchLastArticle implements UseCase<ArticleType> {
+export class FetchLastArticle {
   constructor(private fetchService: ArticleService = new ArticleService()) {}
 
   async execute(onSuccess: (article: ArticleType) => void) {

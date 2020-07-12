@@ -2,7 +2,7 @@ import { Box, Container, Grid } from '@material-ui/core';
 import * as React from 'react';
 import { FC } from 'react';
 
-import { ArticleType } from '../../../../contracts/domain/ArticleType';
+import { ArticleType } from '../../../../domain/model/ArticleType';
 import { ArticlePreview } from '../../components/Article/Preview/Item';
 import { ArticlePreviewList } from '../../components/Article/Preview/List';
 import { Footer } from '../../components/Footer';

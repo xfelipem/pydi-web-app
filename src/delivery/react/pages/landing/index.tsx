@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FC, useEffect, useMemo, useState } from 'react';
 
 import { FetchLastArticle } from '../../../../actions/FetchLastArticle';
-import { ArticleType } from '../../../../contracts/domain/ArticleType';
+import { ArticleType } from '../../../../domain/model/ArticleType';
 import { Landing } from './Landing';
 
 export const LandingPage: FC = () => {

@@ -1,5 +1,5 @@
 import { FetchService } from '../../infrastructure/FetchService';
-import { ArticleService } from '../ArticleService';
+import { ArticleService } from '../model/ArticleService';
 
 describe('Given a ArticleFetchService', () => {
   test(`
