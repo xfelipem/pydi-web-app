@@ -1,3 +1,3 @@
 export interface UseCase<T> {
-  execute: (onFetch: (requested: T) => void) => Promise<void>;
+  execute: (onSuccess: (requested: T) => void) => Promise<void>;
 }
