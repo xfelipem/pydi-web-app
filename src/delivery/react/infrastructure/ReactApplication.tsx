@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { ReactWebApp } from '../delivery/ReactWebApp';
-import { Application } from './Application';
-import { Router } from './Router';
+import { ReactWebApp } from '..';
+import { Application } from '../../../contracts/infrastructure/Application';
+import { Router } from '../../../contracts/infrastructure/Router';
 
 export class ReactApplication implements Application {
   constructor(private router: Router) {}

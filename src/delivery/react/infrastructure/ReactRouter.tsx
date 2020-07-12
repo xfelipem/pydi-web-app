@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { LandingPage } from '../delivery/pages/landing';
-import { Router } from './Router';
+import { LandingPage } from '../pages/landing';
+import { Router } from '../../../contracts/infrastructure/Router';
 
 export class ReactRouter implements Router {
-  startListening() {
+  getReactRouter() {
     return (
       <BrowserRouter>
         <Switch>

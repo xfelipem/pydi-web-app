@@ -4,6 +4,7 @@ import { FC } from 'react';
 
 import { ArticlePreview } from '../../components/Article/Preview/Item';
 import { ArticlePreviewList } from '../../components/Article/Preview/List';
+import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
 
 const tabButtonItems = [{ label: 'Last Activity' }, { label: 'About Me' }];
@@ -58,6 +59,7 @@ export const LandingPage: FC = () => {
           <ArticlePreviewList articles={articles} />
         </Grid>
       </Grid>
+      <Footer title='FeliDev' description='A personal web made with love' />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
-import { LandingPage } from '../';
+import { LandingPage } from '..';
 
 describe('Given a LandingPage', () => {
   beforeEach(() => {
