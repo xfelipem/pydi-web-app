@@ -8,8 +8,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import * as React from 'react';
 import { FC } from 'react';
-
 import { ArticlePreview } from '.';
+
 
 const useStyles = makeStyles({
   card: {
@@ -36,7 +36,7 @@ export const HalfWidthPreview: FC<ArticlePreview> = ({ article }) => {
         <Card className={classes.card}>
           <div className={classes.cardDetails}>
             <CardContent>
-              <Typography component='h2' variant='h5'>
+              <Typography component='h2' variant='h5' title={title}>
                 {title}
               </Typography>
               <Typography variant='subtitle1' color='textSecondary'>
@@ -51,7 +51,7 @@ export const HalfWidthPreview: FC<ArticlePreview> = ({ article }) => {
             </CardContent>
           </div>
           <Hidden xsDown>
-            <CardMedia className={classes.cardMedia} image={image} title={title} />
+            <CardMedia className={classes.cardMedia} image={image} title={title} aria-label={title} />
           </Hidden>
         </Card>
       </CardActionArea>

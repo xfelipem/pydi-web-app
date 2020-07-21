@@ -33,6 +33,7 @@ export const Header: FC<HeaderProps> = ({ title, tabButtons }) => {
     <React.Fragment>
       <Toolbar component='header' className={classes.toolbar}>
         <Typography
+          title={title}
           component='h2'
           variant='h5'
           color='inherit'
