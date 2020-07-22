@@ -2,8 +2,6 @@ import { ArticleType } from '../../domain/model/ArticleType';
 import { ArticleService } from '../../domain/model/ArticleService';
 import { FetchArticles } from '../FetchArticles';
 
-import { mocked } from 'ts-jest/utils';
-
 describe('Given a FetchArticles use case', () => {
   test(`
     when is invoked with no arguments, then should retrieve a list of articles
@@ -17,7 +15,7 @@ describe('Given a FetchArticles use case', () => {
       sources: ['https://source.unsplash.com/random'],
     };
 
-    const articleService = mocked({} as ArticleService);
+    const articleService = {} as ArticleService;
     articleService.getArticles = jest.fn().mockResolvedValue([firstArticle]);
 
     const action = new FetchArticles((articleService as unknown) as ArticleService);
