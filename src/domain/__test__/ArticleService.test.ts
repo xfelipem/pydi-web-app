@@ -8,7 +8,7 @@ describe('Given a ArticleFetchService', () => {
   `, async () => {
     jest.mock('../../infrastructure/FetchService');
 
-    const lastArticle = {
+    const mainArticle = {
       id: 'theId01',
       title: 'Super Article',
       abstract: 'Super Abstract',
@@ -17,7 +17,7 @@ describe('Given a ArticleFetchService', () => {
       sources: ['https://source.unsplash.com/random'],
     };
 
-    FetchService.prototype.getJson = jest.fn().mockResolvedValue([lastArticle]);
+    FetchService.prototype.getJson = jest.fn().mockResolvedValue([mainArticle]);
 
     const fetchService = new FetchService();
 
@@ -25,6 +25,6 @@ describe('Given a ArticleFetchService', () => {
 
     const retrievedArticle = (await articleService.getArticles())[0];
 
-    expect(retrievedArticle).toBe(lastArticle);
+    expect(retrievedArticle).toBe(mainArticle);
   });
 });
