@@ -7,7 +7,7 @@ import { useLandingPresenter } from './useLandingPresenter';
 
 type LandingPageProps = { usePresenter: any; fetchArticles: any };
 
-export const LandingPageRoute = () => (
+export const landingPageController = () => (
   <LandingPage usePresenter={useLandingPresenter} fetchArticles={new FetchArticles()} />
 );
 
