@@ -6,7 +6,8 @@ import { ReactRouter } from '../ReactRouter';
 
 describe('Given a ReactRouter', () => {
   const FakeComponent: FC = () => <h1 title='sarasa'>Title</h1>;
-  test('when no route is privided, then should display landing page', () => {
+  
+  test('when routes with path and controller are provided', () => {
     const routes = [{ path: '/', controller: () => <FakeComponent /> }];
     const router = new ReactRouter(routes);
 
