@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { ReactWebApp } from '..';
-import { Application } from '../../../infrastructure/Application';
-import { Router } from '../../../infrastructure/Router';
+import { Application } from '../../../core/contracts/Application';
+import { Router } from '../../../core/contracts/Router';
+import { CssBaseline } from '@material-ui/core';
 
 export class ReactApplication implements Application {
   constructor(private router: Router) {}
@@ -11,7 +11,8 @@ export class ReactApplication implements Application {
   run() {
     ReactDOM.render(
       <React.StrictMode>
-        <ReactWebApp router={this.router} />
+        <CssBaseline />
+        {this.router.getRouter()}
       </React.StrictMode>,
       document.getElementById('root')
     );

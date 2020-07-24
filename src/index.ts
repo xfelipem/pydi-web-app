@@ -1,3 +1,3 @@
-import { application } from './delivery/react/infrastructure';
+import { webApplication } from './application/delivery';
 
-application.run();
+webApplication.run();

@@ -1,12 +1,32 @@
 import { Box, Container, Grid } from '@material-ui/core';
 import * as React from 'react';
 import { FC } from 'react';
-import { ArticleType } from '../../../../domain/model/ArticleType';
-import { ArticlePreview } from '../../components/Article/Preview/Item';
-import { ArticlePreviewList } from '../../components/Article/Preview/List';
-import { Footer } from '../../components/Footer';
-import { ButtonItem, Header } from '../../components/Header';
 
+import { ArticleType } from '../../../../../../core/models/ArticleType';
+import { ArticlePreview } from './Article/Preview/Item';
+import { ArticlePreviewList } from './Article/Preview/List';
+import { Footer } from './layout/Footer';
+import { ButtonItem, Header } from './layout/Header';
+
+type LandingPageProps = { usePresenter: any; fetchArticles: any };
+
+export const LandingPage: FC<LandingPageProps> = ({ usePresenter, fetchArticles }) => {
+  const { shouldDisplay, articles, description, mainArticle, tabButtonItems, title } = usePresenter(
+    fetchArticles
+  );
+
+  if (shouldDisplay) return null;
+
+  return (
+    <Landing
+      articles={articles}
+      description={description}
+      mainArticle={mainArticle}
+      tabButtonItems={tabButtonItems}
+      title={title}
+    />
+  );
+};
 
 type AppDescription = string;
 
@@ -20,13 +40,7 @@ type LandingProps = {
   title: AppTitle;
 };
 
-export const Landing: FC<LandingProps> = ({
-  articles,
-  description,
-  mainArticle,
-  tabButtonItems,
-  title,
-}) => {
+function Landing({ articles, description, mainArticle, tabButtonItems, title }: LandingProps) {
   if (!mainArticle) return null;
   return (
     <Container>
@@ -46,4 +60,4 @@ export const Landing: FC<LandingProps> = ({
       <Footer title={title} description={description} />
     </Container>
   );
-};
+}

@@ -1,13 +1,13 @@
-import { ArticleService } from '../domain/model/ArticleService';
-import { ArticleType } from '../domain/model/ArticleType';
+import { FetchService } from '../core/contracts/FetchService';
+import { ArticleType } from '../core/models/ArticleType';
 
 export type OnSuccess = (articles: ArticleType[]) => void;
 
 export class FetchArticles {
-  constructor(private fetchService: ArticleService = new ArticleService()) {}
+  constructor(private fetchService: FetchService) {}
 
   async execute(onSuccess: OnSuccess) {
-    const articles = await this.fetchService.getArticles();
+    const articles = await this.fetchService.getJson<ArticleType[]>();
 
     onSuccess(articles);
   }

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { FetchArticles } from '../../../../actions/FetchArticles';
-import { ArticleType } from '../../../../domain/model/ArticleType';
+import { FetchArticles } from '../../../../../actions/FetchArticles';
+import { ArticleType } from '../../../../../core/models/ArticleType';
 
 export function useLandingPresenter(fetchArticlesAction: FetchArticles) {
   const [mainArticle, setMainArticle] = useState<ArticleType | undefined>();

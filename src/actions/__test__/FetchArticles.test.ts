@@ -1,5 +1,5 @@
-import { ArticleType } from '../../domain/model/ArticleType';
-import { ArticleService } from '../../domain/model/ArticleService';
+import { FetchService } from '../../core/contracts/FetchService';
+import { ArticleType } from '../../core/models/ArticleType';
 import { FetchArticles } from '../FetchArticles';
 
 describe('Given a FetchArticles use case', () => {
@@ -15,10 +15,11 @@ describe('Given a FetchArticles use case', () => {
       sources: ['https://source.unsplash.com/random'],
     };
 
-    const articleService = {} as ArticleService;
-    articleService.getArticles = jest.fn().mockResolvedValue([firstArticle]);
+    const fetchService = {
+      getJson: jest.fn().mockResolvedValue([firstArticle]),
+    } as FetchService;
 
-    const action = new FetchArticles((articleService as unknown) as ArticleService);
+    const action = new FetchArticles(fetchService);
 
     let externalState;
 

@@ -1,4 +1,6 @@
-export class FetchService {
+import { FetchService } from '../../core/contracts/FetchService';
+
+export class APIFetchService implements FetchService {
   async getJson<T>(): Promise<T> {
     return ([
       {

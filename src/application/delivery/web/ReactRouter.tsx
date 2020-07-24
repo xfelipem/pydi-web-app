@@ -1,15 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { Router } from '../../../infrastructure/Router';
-import { landingPageController } from '../pages/landing';
+import { Router } from '../../../core/contracts/Router';
+import { landingRoute } from './pages/landing/route';
 
 export class ReactRouter implements Router {
-  constructor(
-    private routes: { path: string; controller: any }[] = [
-      { path: '/', controller: landingPageController },
-    ]
-  ) {}
+  constructor(private routes: { path: string; controller: any }[] = [landingRoute]) {}
   getRouter() {
     return (
       <BrowserRouter>

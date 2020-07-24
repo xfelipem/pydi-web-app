@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { FC } from 'react';
 
-import { ArticleType } from '../../../../../../domain/model/ArticleType';
+import { ArticleType } from '../../../../../../../../../core/models/ArticleType';
 import { HalfWidthPreview } from '../Item/HalfWidthPreview';
 
 type ArticlePreviewProps = { articles: ArticleType[] };

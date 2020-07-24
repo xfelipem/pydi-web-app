@@ -1,14 +1,14 @@
 import { act, cleanup, render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 
-import { LandingPage } from '..';
-import { FetchArticles } from '../../../../../actions/FetchArticles';
-import { ArticleService } from '../../../../../domain/model/ArticleService';
+import { LandingPage } from '../view';
+import { FetchService } from '../../../../../../core/contracts/FetchService';
+import { FetchArticles } from '../../../../../../actions/FetchArticles';
 import { useLandingPresenter } from '../useLandingPresenter';
 
 describe('Given a LandingPage', () => {
-  const mockedArticleService = ({
-    getArticles: jest.fn().mockResolvedValue([
+  const fetchService = {
+    getJson: jest.fn().mockResolvedValue([
       {
         id: 'theId01',
         title: 'Sarasa Article',
@@ -26,9 +26,9 @@ describe('Given a LandingPage', () => {
         sources: ['https://source.unsplash.com/random'],
       },
     ]),
-  } as unknown) as ArticleService;
+  } as FetchService;
 
-  const fetchArticles = new FetchArticles(mockedArticleService);
+  const fetchArticles = new FetchArticles(fetchService);
   const landingPage = (
     <LandingPage fetchArticles={fetchArticles} usePresenter={useLandingPresenter} />
   );
