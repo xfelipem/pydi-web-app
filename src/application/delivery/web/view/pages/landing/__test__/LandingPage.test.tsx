@@ -1,13 +1,13 @@
 import { act, cleanup, render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 
-import { LandingPage } from '../view';
-import { FetchService } from '../../../../../../core/contracts/FetchService';
-import { FetchArticles } from '../../../../../../actions/FetchArticles';
+import { FetchArticles } from '../../../../../../../actions/FetchArticles';
+import { FetchService } from '../../../../../../../core/contracts/FetchService';
 import { useLandingPresenter } from '../useLandingPresenter';
+import { LandingPage } from '../view';
 
 describe('Given a LandingPage', () => {
-  const fetchService = {
+  const fetchService = ({
     getJson: jest.fn().mockResolvedValue([
       {
         id: 'theId01',
@@ -26,7 +26,7 @@ describe('Given a LandingPage', () => {
         sources: ['https://source.unsplash.com/random'],
       },
     ]),
-  } as FetchService;
+  } as unknown) as FetchService;
 
   const fetchArticles = new FetchArticles(fetchService);
   const landingPage = (

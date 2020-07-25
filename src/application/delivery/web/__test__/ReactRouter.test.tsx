@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import * as React from 'react';
 import { FC } from 'react';
 
-import { ReactRouter } from '../ReactRouter';
+import { ReactRouter } from '../infrastructure/ReactRouter';
 
 describe('Given a ReactRouter', () => {
   const FakeComponent: FC = () => <h1 title='sarasa'>Title</h1>;
