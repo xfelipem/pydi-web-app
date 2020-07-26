@@ -1,3 +1,3 @@
-import { webApplication } from './application/delivery';
+import { webApplication } from './application/delivery/web';
 
 webApplication.run();
