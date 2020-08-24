@@ -37,4 +37,8 @@ export class APIFetchService implements FetchService {
       },
     ] as unknown) as T;
   }
+
+  async post(postProps: any) {
+    return;
+  }
 }

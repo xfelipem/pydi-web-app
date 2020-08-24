@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { FetchArticles } from '../../../../../actions/FetchArticles';
-import { APIFetchService } from '../../../../infrastructure/APIFetchService';
+import { FetchArticles } from '../../../../../../actions/FetchArticles';
+import { APIFetchService } from '../../../../../infrastructure/APIFetchService';
 import { useLandingPresenter } from './useLandingPresenter';
 import { LandingPage } from './view';
 

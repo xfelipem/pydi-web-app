@@ -1,7 +1,7 @@
 import { FetchService } from '../core/contracts/FetchService';
 import { ArticleType } from '../core/models/ArticleType';
 
-export type OnSuccess = (articles: ArticleType[]) => void;
+type OnSuccess = (articles: ArticleType[]) => void;
 
 export class FetchArticles {
   constructor(private fetchService: FetchService) {}
