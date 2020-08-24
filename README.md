@@ -47,7 +47,7 @@ Antes de adentrarnos en el cómo y el por qué de cada carpeta nos faltaría rep
 El nivel conceptual más "macro", el zoom más lejano, el continente conceptual del mapa que estamos analizando está dividido en tres:
 
 * **Dominio**: lógica particular de nuestra aplicación, llamada también *de negocios*, por más que no sea de un comercio. Por ejemplo, en wikipedia sería la lógica referida a la creación de una articulo, en twitter la lógica referida a quien puede leer o no un tweet.
-* **Aplicación**: lógica relacionada al tipo de aplicación a través de la cual vamos a entregar nuestras funcionalidades de dominio al usuario, está relacionado con el tipo de interfás, tales como APIs, lineas de comando, web, mobile, realidad aumentada, VR.
+* **Aplicación**: lógica relacionada al tipo de aplicación a través de la cual vamos a entregar nuestras funcionalidades de dominio al usuario, se vincula con los dispositivos (computadora, tablet, etc.) e interfaces desde el cual se utiliza, tales como APIs, lineas de comando, web, realidad aumentada, VR.
 * **Infraestructura**: lógica relacionada a necesidades físicas de nuestra aplicación, tales como bases de datos, servidores web. No suelen ser vistas por el usuario, más que a través del dispositivo que las consumen. 
 
 Esta estructura es jérarquica, el **dominio** rige por sobre la **aplicación** y, esta, sobre la **infraestructura**. Pero el acceso a la capa de **dominio** tiene un flujo inverso, se accede desde la capa de aplicación, a esta capa, los usuarios acceden a traves de la capa de **infraestructura**, como por ejemplo un browser.
