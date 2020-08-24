@@ -3,8 +3,8 @@ import React from 'react';
 
 import { CreateArticleAction } from '../../../../../../../actions/CreateArticle';
 import { FetchService } from '../../../../../../../core/contracts/FetchService';
-import { useCreatePresenter } from '../presenter/useCreatePresenter';
-import { CreatePage } from '../view/CreatePage';
+import { CreateArticlePage } from '../view/react/CreateArticlePage';
+import { useCreateArticlePresenter } from '../view/react/hooks/useCreateArticlePresenter';
 
 describe('Given a CreatePage', () => {
   const fetchService = ({
@@ -13,7 +13,9 @@ describe('Given a CreatePage', () => {
 
   const createArticleAction = new CreateArticleAction(fetchService);
 
-  const createPage = <CreatePage action={createArticleAction} usePresenter={useCreatePresenter} />;
+  const createPage = (
+    <CreateArticlePage model={createArticleAction} actions={useCreateArticlePresenter} />
+  );
 
   afterEach(() => cleanup());
 

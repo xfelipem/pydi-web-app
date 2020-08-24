@@ -1,8 +1,7 @@
 import { Button, Grid, TextField } from '@material-ui/core';
 import * as React from 'react';
 
-import { CreateArticleAction } from '../../../../../../../actions/CreateArticle';
-import { ArticleLayout } from '../../../layouts/ArticleLayout';
+import { ArticleLayout } from '../../../../layouts/ArticleLayout';
 
 /**
  * Este contrato parece un poco extraño, ¿no?
@@ -10,12 +9,15 @@ import { ArticleLayout } from '../../../layouts/ArticleLayout';
  * implementación de la acción ni del hook, solo depender de las propiedades resultantes
  * escribiendo esto pienso que es mejor pasar esta responsabilidad al controller.
  */
-type CreatePageProps = {
-  action: CreateArticleAction;
-  usePresenter: ({ createArticle }: { createArticle: CreateArticleAction }) => any;
+type CreateArticleViewProps = {
+  model: any;
+  actions: any;
 };
 
-export const CreatePage = (props: CreatePageProps) => {
+export const CreateArticleView = ({ model, actions }: CreateArticleViewProps) => {
+  const { title } = model;
+  const { onTitleChange } = actions;
+
   return (
     <ArticleLayout
       title='PyDI'
@@ -25,7 +27,12 @@ export const CreatePage = (props: CreatePageProps) => {
       <Grid container>
         <Grid item xs={12}>
           <form noValidate autoComplete='off'>
-            <TextField id='new-article-title' label='title' />
+            <TextField
+              id='new-article-title'
+              label='title'
+              value={title}
+              onChange={onTitleChange}
+            />
             <TextField id='new-article-abstract' label='abstract' />
             <TextField id='new-article-content' label='content' />
             <TextField id='new-article-date' label='date' />

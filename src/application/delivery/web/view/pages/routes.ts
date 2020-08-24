@@ -1,4 +1,4 @@
 import { landingRoute } from "./landing/route";
-import { createRoute } from "./create/createRoute";
+import { createArticleRoute } from "./create/createRoute";
 
-export const webRoutes = [landingRoute, createRoute]
+export const webRoutes = [landingRoute, createArticleRoute]

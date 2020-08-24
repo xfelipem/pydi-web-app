@@ -1,16 +1,16 @@
 # Publicación y Debate de Ideas
 **PyDI** es una herramienta para generar conocimiento colectivo. Nos ayuda a escribir un artículo con fuentes y a publicarlo, tanto para difundirlo, como para mejorarlo a través de devoluciones, fundamentadas y moderadas por el autor.
 
-Las devoluciones son articulos, así que cada idea puede ser origen de infinitos conocimientos, cada conocimiento generado a través de la herramienta tiene un historial de ideas que la componen y uno puede revisar como se fue formando. Esto permite retomar caminos abandonados y llegar nuevas concluciones.
+Las devoluciones son artículos en sí mismos, así que cada idea puede ser el disparador de una nueva construccies de ideas, cada conocimiento generado a través de la herramienta tiene un historial de como se fue construyendo. Esto permite retomar caminos abandonados y llegar nuevas concluciones.
 
-**PyDI** surge de la necesidad de mejorar el nivel de información disponible en internet, por lo que pone el foco en acelerar el chequeo de la veracidad de los datos y en mejorar el intercambio entre personas.
+**PyDI** surge de la necesidad de mejorar el nivel de información disponible en internet, por lo que pone el foco en que el lector pueda verificar rápidamente la veracidad de los datos y en mejorar el intercambio entre personas.
 
 # Capacidades de la herramienta
 
 ## Actuales
-* Administrador de articulos
-  * Lista articulos
-  * Crea articulos con:
+* Administrador de artículos
+  * Lista artículos
+  * Crea artículos con:
     * contenido
     * fecha
     * resumen
@@ -19,7 +19,7 @@ Las devoluciones son articulos, así que cada idea puede ser origen de infinitos
     * temas
 ## Futuros
 * Crear
-  * Vinculo entre articulos a través de fuentes
+  * Vinculo entre artículos a través de fuentes
 * Listar
   * por temas
   * por palabras más usadas
@@ -55,13 +55,15 @@ Esta estructura es jérarquica, el **dominio** rige por sobre la **aplicación**
 Algunos de los conceptos que se usaron para definir la arquitectura fueron [Ports and Adapters Architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)) y [Domain-driven Desing](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)).
 
 ### Actions
-Las *acciones*, también llamadas *casos de uso* o *interactors*, son servicios de la capa de aplicación que sirven de punto de acceso a nuestro **dominio**. Su responsabilidad es coordinar a los actores necesarios para realizar una acción que modifique, o un pedido de informe el estado de nuestro sistema.
+Las *acciones*, también llamadas *casos de uso* o *interactors*, son servicios de la capa de aplicación que sirven de punto de acceso a nuestro **dominio**. Su responsabilidad es coordinar a los actores necesarios para realizar una acción que modifique el estado de nuestro sistema o que nos de información sobre el mismo.
 
 Ejemplo de una acción *commando*: CreateArticleAction. Esta crea un articulo, es decir modifica el estado de nuestro sistema, porque luego de que se ejecute ese acción el estado de nuestra base de datos estará modificado.
 
-Ejemplo de una acción tipo *pedido*: FetchArticles. Esta acción trae los articulos disponibles y el la vista los muestra, pero no modifica el estado de nuestra aplicación.
+Ejemplo de una acción tipo *pedido*: FetchArticles. Esta acción trae los artículos disponibles y el la vista los muestra, pero no modifica el estado de nuestra aplicación.
 
-La elección de llamarlos **actions** y no use cases, junto con la de que estén en una carpeta propia tiene que ver con que es lo más importente de nuestra aplicación y quiero que se vea primero que nada cuando alguien quiera revisar el código. 
+La elección de llamarlos **actions** y no use cases, junto con la de que estén en una carpeta propia tiene que ver con que es lo más importente de nuestra aplicación y quiero que se vea primero que nada cuando alguien quiera revisar el código.
+
+### 
 
 ```mermaid
   graph TD;
